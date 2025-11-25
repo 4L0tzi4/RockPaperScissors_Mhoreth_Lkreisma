@@ -1,24 +1,19 @@
 package htl.steyr.rockpaperscissors_mhoreth_lkreisma;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
 
 public class GameController {
-    @FXML
-    private Label welcomeText;
+    private String weapon;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+
+    public void weaponButtonClicked(ActionEvent actionEvent) {
+        //holt sich das was auf dem Button steht
+        weapon = ((Button) actionEvent.getSource()).getText();
+        //in weapon steht nun die ausgewählte Waffe (Rock) (Paper) (Scissors)
+
+
+        }
+
     }
 
-    public void rockButtonClicked(ActionEvent actionEvent) {
-    }
-
-    public void paperButtonClicked(ActionEvent actionEvent) {
-    }
-
-    public void scissorsButtonClicked(ActionEvent actionEvent) {
-    }
-}

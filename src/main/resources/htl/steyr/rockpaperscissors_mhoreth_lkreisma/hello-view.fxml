@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:controller="htl.steyr.rockpaperscissors_mhoreth_lkreisma.GameController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="806.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="806.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr.rockpaperscissors_mhoreth_lkreisma.GameController">
    <children>
       <Label layoutX="140.0" layoutY="24.0" text="Rock Paper Scissors">
          <font>
@@ -18,8 +17,8 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Button layoutX="114.0" layoutY="346.0" mnemonicParsing="false" onAction="#rockButtonClicked" text="Button" />
-      <Button layoutX="275.0" layoutY="346.0" mnemonicParsing="false" onAction="#paperButtonClicked" text="Button" />
-      <Button layoutX="435.0" layoutY="346.0" mnemonicParsing="false" onAction="#scissorsButtonClicked" text="Button" />
+      <Button layoutX="114.0" layoutY="346.0" mnemonicParsing="false" onAction="#weaponButtonClicked" text="Button" />
+      <Button layoutX="275.0" layoutY="346.0" mnemonicParsing="false" onAction="#weaponButtonClicked" text="Button" />
+      <Button layoutX="435.0" layoutY="346.0" mnemonicParsing="false" onAction="#weaponButtonClicked" text="Button" />
    </children>
 </AnchorPane>
