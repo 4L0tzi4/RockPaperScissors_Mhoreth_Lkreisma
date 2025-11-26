@@ -4,8 +4,13 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Computer {
 
-    public int chosenWeapon() {
-        return ThreadLocalRandom.current().nextInt(1, 3 + 1);
+    public String chosenWeapon() {
 
+        return switch (ThreadLocalRandom.current().nextInt(1, 3 + 1)) {
+            case 1 -> "Stone";
+            case 2 -> "Paper";
+            case 3 -> "Scissors";
+            default -> "Nothing";
+        };
     }
 }
