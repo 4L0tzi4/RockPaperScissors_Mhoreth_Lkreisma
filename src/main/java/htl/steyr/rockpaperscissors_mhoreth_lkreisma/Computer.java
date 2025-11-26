@@ -7,10 +7,11 @@ public class Computer {
     public String chosenWeapon() {
 
         return switch (ThreadLocalRandom.current().nextInt(1, 3 + 1)) {
-            case 1 -> "Stone";
+            case 1 -> "Rock";
             case 2 -> "Paper";
             case 3 -> "Scissors";
-            default -> "Nothing";
+            default -> chosenWeapon();
         };
+
     }
 }
