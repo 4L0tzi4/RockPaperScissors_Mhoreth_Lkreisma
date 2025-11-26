@@ -13,6 +13,9 @@ public class GameApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GameApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        //einbinden der css
+        scene.getStylesheets().add(GameApplication.class.getResource("style.css").toExternalForm());
+
         stage.setTitle("Rock! Paper! Scissors!");
         stage.setScene(scene);
         stage.show();

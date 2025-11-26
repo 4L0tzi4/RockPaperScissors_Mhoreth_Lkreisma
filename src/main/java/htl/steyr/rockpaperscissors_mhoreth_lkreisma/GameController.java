@@ -7,9 +7,6 @@ import javafx.scene.image.ImageView;
 public class GameController {
     public ImageView myWeaponImageView;
     public ImageView botWeaponImageView;
-    public Button scissorsButton;
-    public Button paperButton;
-    public Button rockButton;
     private String weapon;
 
     public void weaponButtonClicked(ActionEvent actionEvent) {
