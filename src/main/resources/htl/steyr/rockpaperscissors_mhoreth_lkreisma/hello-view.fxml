@@ -17,8 +17,8 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Button layoutX="114.0" layoutY="346.0" mnemonicParsing="false" onAction="#weaponButtonClicked" text="Button" />
-      <Button layoutX="275.0" layoutY="346.0" mnemonicParsing="false" onAction="#weaponButtonClicked" text="Button" />
-      <Button layoutX="435.0" layoutY="346.0" mnemonicParsing="false" onAction="#weaponButtonClicked" text="Button" />
+      <Button layoutX="114.0" layoutY="346.0" mnemonicParsing="false" onAction="#weaponButtonClicked" text="Rock" />
+      <Button layoutX="275.0" layoutY="346.0" mnemonicParsing="false" onAction="#weaponButtonClicked" text="Paper" />
+      <Button layoutX="435.0" layoutY="346.0" mnemonicParsing="false" onAction="#weaponButtonClicked" text="Scissors" />
    </children>
 </AnchorPane>
