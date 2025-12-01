@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
 import java.util.Objects;
 import java.util.Random;
@@ -20,6 +21,7 @@ public class GameController {
     public Button rockButton;
     public Button paperButton;
     public Button scissorsButton;
+    public AnchorPane RockPaperScissorsAnchorpane;
 
     private String myWeapon;
     private String botWeapon;
@@ -93,7 +95,12 @@ public class GameController {
 
     public synchronized void progressBar(){
         ProgressBar progressbar = new ProgressBar();
-
+        progressbar.setVisible(true);
+        RockPaperScissorsAnchorpane.getChildren().add(progressbar);
+        progressbar.setPrefWidth(80);
+        progressbar.setPrefHeight(20);
+        progressbar.setLayoutY((RockPaperScissorsAnchorpane.getPrefHeight()/3)*2);
+        progressbar.setLayoutX((RockPaperScissorsAnchorpane.getPrefWidth()/2)-40);
         progressbar.setProgress(0);
 
         Thread thread = new Thread(() -> {
@@ -115,6 +122,7 @@ public class GameController {
                 // Finish up
                 Platform.runLater(() -> {
                     progressbar.setProgress(1.0); //that the progressbar has to be visually full
+                    progressbar.setVisible(false);
                     resultOfMatch(); // Call the result method here!
                 });
 
