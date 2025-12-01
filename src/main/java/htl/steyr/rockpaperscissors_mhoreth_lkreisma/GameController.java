@@ -13,9 +13,7 @@ import java.util.Random;
 public class GameController {
     public ImageView myWeaponImageView;
     public ImageView botWeaponImageView;
-    public ImageView stoneImageView;
-    public ImageView paperImageView;
-    public ImageView scissorsImageView;
+
 
     private final Computer computer = new Computer();
 
@@ -25,7 +23,7 @@ public class GameController {
 
     private String myWeapon;
     private String botWeapon;
-    private String weapon;
+
 
 
     public void weaponButtonClicked(ActionEvent actionEvent) {
@@ -35,28 +33,7 @@ public class GameController {
         //in weapon steht nun die ausgewählte Waffe (Rock) (Paper) (Scissors)
         botWeapon = computer.chosenWeapon();
 
-
-        Image botImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream(pictureOfBot())));
-        botWeaponImageView.setImage(botImage);
-        Image myImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream(pictureOfMe())));
-        myWeaponImageView.setImage(myImage);
-
-
         progressBar();
-
-        if(winnerOfMatch() == 1){
-            System.out.println("! YOU WON !");
-        }else if(winnerOfMatch() == 2){
-            System.out.println("! ITS A DRAW !");
-        }else if(winnerOfMatch() == 3){
-            System.out.println("! THE BOT WON !");
-        }else{
-            //to prevent any errors if winnerOfMatch smaller than 1 or larger than 3
-            System.out.println("ERROR, somethings not working");
-        }
-
-
-
 
     }
 
@@ -85,41 +62,60 @@ public class GameController {
         if (myWeapon.equals("rockButton") && botWeapon.equals("Scissors") ||
                 myWeapon.equals("scissorsButton") && botWeapon.equals("Paper") ||
                 myWeapon.equals("paperButton") && botWeapon.equals("Rock")){
-            return 1;
+            return 1; // -> I Win
         }else if(myWeapon.equals("rockButton") && botWeapon.equals("Rock") ||
                 myWeapon.equals("scissorsButton") && botWeapon.equals("Scissors") ||
                 myWeapon.equals("paperButton") && botWeapon.equals("Paper")) {
-            return 2;
+            return 2; // -> Its a Draw
         }else{
-            return 3;
+            return 3; // -> The Bot Won
         }
     }
 
-    public void progressBar(){
+    public void resultOfMatch(){
+        Image botImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream(pictureOfBot())));
+        botWeaponImageView.setImage(botImage);
+        Image myImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream(pictureOfMe())));
+        myWeaponImageView.setImage(myImage);
+
+
+        if(winnerOfMatch() == 1){
+            System.out.println("! YOU WON !");
+        }else if(winnerOfMatch() == 2){
+            System.out.println("! ITS A DRAW !");
+        }else if(winnerOfMatch() == 3){
+            System.out.println("! THE BOT WON !");
+        }else{
+            //to prevent any errors if winnerOfMatch smaller than 1 or larger than 3
+            System.out.println("ERROR, somethings not working");
+        }
+    }
+
+    public synchronized void progressBar(){
         ProgressBar progressbar = new ProgressBar();
 
         progressbar.setProgress(0);
 
         Thread thread = new Thread(() -> {
-            int progresstime = 1000 + new Random().nextInt(5000);
+            int progresstime = 1000 + new Random().nextInt(3000);
 
             try {
                 long startTime = System.currentTimeMillis();
                 long endTime = startTime + progresstime;
-                System.out.println("Time: " + progresstime);
+                System.out.println("Time: " + progresstime); //to find out how long it took
 
                 while (System.currentTimeMillis() < endTime) {
                     double progress = (double) (System.currentTimeMillis() - startTime) / progresstime;
                     Platform.runLater(() -> progressbar.setProgress(progress));
 
-                    // CHANGE: 20ms provides smooth animation. 2000ms is 2 seconds!
+                    // CHANGE: for a smooth animation later
                     Thread.sleep(20);
                 }
 
                 // Finish up
                 Platform.runLater(() -> {
-                    progressbar.setProgress(1.0);
-                    winnerOfMatch(); // Call the result method here!
+                    progressbar.setProgress(1.0); //that the progressbar has to be visually full
+                    resultOfMatch(); // Call the result method here!
                 });
 
             } catch (InterruptedException e) {
