@@ -49,7 +49,7 @@ public class GameController {
 
     public String pictureOfBot(){
         return switch(botWeapon){
-            case "Rock" -> "pictures/Stone.png";
+            case "Rock" -> "pictures/Rock.png";
             case "Paper" -> "pictures/Paper.png";
             case "Scissors" -> "pictures/Scissors.png";
             default -> null;

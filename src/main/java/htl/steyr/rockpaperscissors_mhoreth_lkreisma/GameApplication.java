@@ -20,7 +20,7 @@ public class GameApplication extends Application {
         stage.setScene(scene);
 
 /*
-        Image rock = new Image(Objects.requireNonNull(getClass().getResourceAsStream("pictures/Stone.png")));
+        Image rock = new Image(Objects.requireNonNull(getClass().getResourceAsStream("pictures/Rock.png")));
         ImageView rockView = new ImageView(rock);
 
         rockView.setFitHeight(100);
