@@ -14,7 +14,7 @@ public class GameController {
     public ImageView paperImageView;
     public ImageView scissorsImageView;
 
-    private Computer computer = new Computer();
+    private final Computer computer = new Computer();
     private String myWeapon;
     private String botWeapon;
 
@@ -22,8 +22,10 @@ public class GameController {
     public void weaponButtonClicked(ActionEvent actionEvent) {
         //holt sich das was auf dem Button steht
         myWeapon = ((Button) actionEvent.getSource()).getText();
+
         //in weapon steht nun die ausgewählte Waffe (Rock) (Paper) (Scissors)
         botWeapon = computer.chosenWeapon();
+
 
         Image botImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream(pictureOfBot())));
         botWeaponImageView.setImage(botImage);
@@ -35,8 +37,9 @@ public class GameController {
         }else{
             if(myWeapon.equals(botWeapon)){
                 System.out.println("It's a draw!");
-            }
+            }else {
             System.out.println("! THE BOT WON :( !");
+            }
         }
 
 
