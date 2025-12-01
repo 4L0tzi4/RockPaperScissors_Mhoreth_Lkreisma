@@ -17,6 +17,7 @@ public class GameController {
     private final Computer computer = new Computer();
     private String myWeapon;
     private String botWeapon;
+    private String weapon;
 
 
     public void weaponButtonClicked(ActionEvent actionEvent) {
@@ -77,6 +78,6 @@ public class GameController {
         }
     }
 
-}
+    }
 
     
