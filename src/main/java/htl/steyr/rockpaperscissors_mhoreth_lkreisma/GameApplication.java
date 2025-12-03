@@ -17,7 +17,6 @@ public class GameApplication extends Application {
         stage.setResizable(false);
         //einbinden der css
         scene.getStylesheets().add(GameApplication.class.getResource("style.css").toExternalForm());
-
         stage.setTitle("Rock! Paper! Scissors!");
         stage.setScene(scene);
         stage.show();

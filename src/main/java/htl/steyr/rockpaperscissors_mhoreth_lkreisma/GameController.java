@@ -2,6 +2,7 @@ package htl.steyr.rockpaperscissors_mhoreth_lkreisma;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
@@ -9,6 +10,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.Objects;
@@ -17,6 +20,8 @@ import java.util.Random;
 public class GameController {
     public ImageView myWeaponImageView;
     public ImageView botWeaponImageView;
+
+
 
 
     private final Computer computer = new Computer();
@@ -29,19 +34,34 @@ public class GameController {
     private String myWeapon;
     private String botWeapon;
 
-    public void start(){
-        URL resource = getClass().getResource("/path/to/music.mp3");
-        Media sound = new Media(resource.toExternalForm());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
 
-        mediaPlayer.play();
+
+    public void initialize(){
+        startmusic();
     }
+
+
+    public void startmusic(){
+        try {
+            URL resource = getClass().getResource("./music/Gelbton - Losing control.mp3");
+            Media sound = new Media(resource.toExternalForm());
+            MediaPlayer mediaPlayer = new MediaPlayer(sound);
+            mediaPlayer.setVolume(50);
+            mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+            mediaPlayer.play();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
     public void weaponButtonClicked(ActionEvent actionEvent) {
         //holt sich das was auf dem Button steht
         myWeapon = ((Button) actionEvent.getSource()).getId();
 
         Image myImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream(pictureOfMe())));
         myWeaponImageView.setImage(myImage);
+
 
         //in weapon steht nun die ausgewählte Waffe (Rock) (Paper) (Scissors)
         botWeapon = computer.chosenWeapon();
