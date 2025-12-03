@@ -30,6 +30,7 @@ public class GameController {
     private String botWeapon;
 
     Highscore score = new Highscore();
+    private int count = 0;
 
 
 
@@ -45,8 +46,9 @@ public class GameController {
         //in weapon steht nun die ausgewählte Waffe (Rock) (Paper) (Scissors)
         botWeapon = computer.chosenWeapon();
 
+        score.setHighscore(6);
 
-            score.setHighscore(5);
+        System.out.println(score.getHighscore());
 
 
         progressBar();
@@ -95,6 +97,10 @@ public class GameController {
 
         if(winnerOfMatch() == 1){
                 displayWinner.setText("! YOU WON !");
+                ++count;
+                if(count > score.getHighscore()){
+                    score.setHighscore(count);
+                }
         }else if(winnerOfMatch() == 2){
             displayWinner.setText("! ITS A DRAW !");
         }else if(winnerOfMatch() == 3){
