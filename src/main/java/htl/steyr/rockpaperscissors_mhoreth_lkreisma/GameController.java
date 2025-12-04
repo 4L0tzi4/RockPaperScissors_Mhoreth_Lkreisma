@@ -23,11 +23,15 @@ public class GameController {
     public Button rockButton;
     public Button paperButton;
     public Button scissorsButton;
-    public AnchorPane RockPaperScissorsAnchorpane;
-    public Label displayWinner;
 
+    public AnchorPane RockPaperScissorsAnchorpane;
+
+    public Label displayWinner;
     private String myWeapon;
     private String botWeapon;
+
+    public Label scoreLabel;
+    public Label highscoreLabel;
 
     Highscore score = new Highscore();
     private int count = 0;
@@ -46,7 +50,7 @@ public class GameController {
         //in weapon steht nun die ausgewählte Waffe (Rock) (Paper) (Scissors)
         botWeapon = computer.chosenWeapon();
 
-        score.setHighscore(6);
+
 
         System.out.println(score.getHighscore());
 
