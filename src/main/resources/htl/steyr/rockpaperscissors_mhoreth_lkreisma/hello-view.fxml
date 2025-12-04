@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="RockPaperScissorsAnchorpane" prefHeight="920.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr.rockpaperscissors_mhoreth_lkreisma.GameController">
@@ -19,38 +20,37 @@
             <Font name="System Bold Italic" size="17.0" />
          </font>
       </Label>
-
-       <Button fx:id="rockButton" layoutX="60.0" layoutY="254.0" mnemonicParsing="false" onAction="#weaponButtonClicked" prefHeight="100.0" prefWidth="100.0" />
-      <Button fx:id="paperButton" layoutX="190.0" layoutY="254.0" mnemonicParsing="false" onAction="#weaponButtonClicked" prefHeight="100.0" prefWidth="100.0" />
-      <Button fx:id="scissorsButton" layoutX="320.0" layoutY="254.0" mnemonicParsing="false" onAction="#weaponButtonClicked" prefHeight="100.0" prefWidth="100.0" />
+      <Button fx:id="rockButton" layoutX="96.0" layoutY="248.0" mnemonicParsing="false" onAction="#weaponButtonClicked" prefHeight="100.0" prefWidth="100.0" />
+      <Button fx:id="paperButton" layoutX="250.0" layoutY="248.0" mnemonicParsing="false" onAction="#weaponButtonClicked" prefHeight="100.0" prefWidth="100.0" />
        <Button fx:id="wellButton" layoutX="450.0" layoutY="254.0" mnemonicParsing="false" onAction="#weaponButtonClicked" prefHeight="100.0" prefWidth="100.0" />
 
-      <ImageView fx:id="myWeaponImageView" fitHeight="150.0" fitWidth="150.0" layoutX="71.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="botWeaponImageView" fitHeight="150.0" fitWidth="150.0" layoutX="380.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true" />
-      <ChoiceBox fx:id="musicChoiceBox" layoutX="-1.0" layoutY="730.0" prefWidth="150.0" />
-      <Label layoutX="16.0" layoutY="700.0" text="Music Player">
+       <Button fx:id="scissorsButton" layoutX="405.0" layoutY="248.0" mnemonicParsing="false" onAction="#weaponButtonClicked" prefHeight="100.0" prefWidth="100.0" />
+      <ImageView fx:id="myWeaponImageView" fitHeight="150.0" fitWidth="150.0" layoutX="71.0" layoutY="502.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="70.0" />
+      <ImageView fx:id="botWeaponImageView" fitHeight="150.0" fitWidth="150.0" layoutX="380.0" layoutY="502.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="70.0" />
+      <ChoiceBox fx:id="musicChoiceBox" layoutX="14.0" layoutY="849.0" prefWidth="150.0" AnchorPane.leftAnchor="14.0" />
+      <Label layoutX="16.0" layoutY="813.0" text="Music Player" AnchorPane.leftAnchor="14.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-       <Label layoutX="285.0" layoutY="482.0" text="VS">
+       <Label layoutX="284.0" layoutY="538.0" text="VS">
            <font>
                <Font size="27.0" />
            </font>
        </Label>
-       <Label fx:id="displayWinner" alignment="CENTER" contentDisplay="CENTER" layoutX="97.0" layoutY="616.0" prefHeight="47.0" prefWidth="408.0">
+       <Label fx:id="displayWinner" alignment="CENTER" contentDisplay="CENTER" layoutX="96.0" layoutY="687.0" prefHeight="47.0" prefWidth="408.0">
            <font>
                <Font size="32.0" />
            </font>
        </Label>
-       <Label layoutX="43.0" layoutY="748.0" text="Highscore:" />
-       <Label layoutX="65.0" layoutY="725.0" text="Score:" />
-       <Label fx:id="scoreLabel" layoutX="109.0" layoutY="725.0" text="--" />
-       <Label fx:id="highscoreLabel" layoutX="109.0" layoutY="748.0" text="--" />
-       <Label layoutX="1.0" layoutY="348.0" prefHeight="17.0" prefWidth="600.0" text="--------------------------------------------------">
-           <font>
-               <Font size="30.0" />
-           </font>
-       </Label>
+       <Label layoutX="168.0" layoutY="421.0" text="Highscore:" />
+       <Label layoutX="27.0" layoutY="421.0" text="Score:" />
+       <Label fx:id="scoreLabel" layoutX="65.0" layoutY="421.0" text="--" />
+       <Label fx:id="highscoreLabel" layoutX="232.0" layoutY="421.0" text="--" />
+      <Line endX="460.0" layoutX="146.0" layoutY="381.0" startX="-146.0" />
+      <Line endX="-16.5" layoutX="264.0" layoutY="441.0" startX="-100.0" />
+      <Line endX="-100.0" endY="23.0" layoutX="264.0" layoutY="418.0" startX="-100.0" />
+      <Line endX="-16.5" layoutX="123.0" layoutY="441.0" startX="-100.0" />
+      <Line endX="-100.0" endY="23.0" layoutX="123.0" layoutY="418.0" startX="-100.0" />
    </children>
 </AnchorPane>
