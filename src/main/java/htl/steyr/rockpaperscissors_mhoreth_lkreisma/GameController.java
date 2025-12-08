@@ -85,7 +85,7 @@ public class GameController {
             // Starte neuen MediaPlayer mit der ausgewählten Musik
             Media sound = new Media(url.toExternalForm());
             mediaPlayer = new MediaPlayer(sound);
-            mediaPlayer.setVolume(0.5); // Lautstärke auf 50 %
+            mediaPlayer.setVolume(0.18); // Lautstärke auf 50 %
             mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE); // Endlosschleife
             mediaPlayer.play();
         });
