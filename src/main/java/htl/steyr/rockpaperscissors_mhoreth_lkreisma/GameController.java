@@ -23,6 +23,7 @@ public class GameController {
     // ImageViews für die Anzeige der Waffen
     public ImageView myWeaponImageView;
     public ImageView botWeaponImageView;
+    public Label MusicPlayerLabel;
 
     @FXML
     private ChoiceBox<String> musicChoiceBox; // Musik-Auswahlbox

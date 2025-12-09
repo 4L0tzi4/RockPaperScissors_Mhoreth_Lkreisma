@@ -18,7 +18,17 @@
 
 #wellButton { -fx-background-image: url("pictures/brunnen.png"); }
 
+#displayWinner {
+    -fx-font-family: "Orbitron", "Exo", "Audiowide", "Oxanium", "Quantico", "Titillium Web", "Space Grotesk", "Rajdhani";
+    -fx-font-size: 28px;
+    -fx-text-fill: #00eaff;     /* neon sci-fi color */
+    -fx-effect: dropshadow(gaussian, #00eaff, 10, 0.3, 0, 0);
+}
 
+#MusicPlayerLabel{
+    -fx-font-family: "Gill Sans MT Condensed", bold;
+    -fx-font-size: 28px;
+}
 
 #musicChoiceBox{
     -fx-font-family: "Berlin Sans FB", SansSerif;
