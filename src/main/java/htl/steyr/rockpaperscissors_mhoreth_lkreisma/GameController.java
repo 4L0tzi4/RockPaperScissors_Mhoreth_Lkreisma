@@ -113,7 +113,7 @@ public class GameController {
             case "Rock" -> "pictures/Rock.png";
             case "Paper" -> "pictures/Paper.png";
             case "Scissors" -> "pictures/Scissors.png";
-            case "Well" -> "pictures/brunnen.png";
+            case "Well" -> "pictures/Well.png";
             default -> null;
         };
     }
@@ -124,7 +124,7 @@ public class GameController {
             case "rockButton" -> "pictures/Rock.png";
             case "paperButton" -> "pictures/Paper.png";
             case "scissorsButton" -> "pictures/Scissors.png";
-            case "wellButton" -> "pictures/brunnen.png";
+            case "wellButton" -> "pictures/Well.png";
             default -> null;
         };
     }
