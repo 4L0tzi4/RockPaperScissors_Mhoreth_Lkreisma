@@ -198,10 +198,11 @@ public class GameController {
                     double progress = (double) (System.currentTimeMillis() - startTime) / progresstime;
                     Platform.runLater(() -> progressbar.setProgress(progress));
                     Thread.sleep(20); // smooth animation
-                    rockButton.disableProperty();
+                    rockButton.setDisable(true)
                     scissorsButton.setDisable(true);
                     paperButton.setDisable(true);
                     wellButton.setDisable(true);
+
                 }
 
                 // hide progress bar and display result
