@@ -1,9 +1,3 @@
-Here is an improved **README.md** that *also includes your Git history summary* in a clean, readable **Project Evolution Timeline** section.
-
-Everything is formatted professionally, easy to read, and suitable for GitHub.
-
----
-
 # 🎮 Rock Paper Scissors (+ Well) — JavaFX Game
 
 A modern, redesigned JavaFX version of **Rock–Paper–Scissors**, extended with the special **Well** mechanic.
