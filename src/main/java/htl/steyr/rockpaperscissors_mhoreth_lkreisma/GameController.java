@@ -218,7 +218,7 @@ public class GameController {
                 });
 
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.out.println("Progressbar failed because of an Interruption");
             }
         });
         thread.start();
